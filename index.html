@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carolina Melgarejo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <nav>
+        <img src="logo.jpg" class="logo" alt="Logo">
+        <div class="botones-container">
+            <div class="botones">
+                <a class="home" href="index.html">Home</a>
+                <a class="presentacion" href="#presentacion">Presentación</a>
+                <a class="contactar" href="#contacto">Contactar</a>
+            </div>
+        </div>
+        <div class="links">
+            <a href="https://wa.me/+5401130740422" class="whatsapp" target="_blank" rel="noopener noreferrer">
+                <img src="logo de whatsapp.png" alt="WhatsApp Logo">
+            </a>
+            <a href="mailto:minuevosercoaching@gmail.com" class="email" target="_blank" rel="noopener noreferrer">Email</a>
+
+        </div>
+    </nav>
+
+    <video autoplay muted loop id="background-video">
+        <source src="video de fondo.mp4" type="video/mp4">
+    </video>
+
+    <div class="minuevo">
+        <div class="content">
+            <h2 class="titulo">Mi Nuevo Ser</h2>
+            <p>
+                <strong>Bienvenido a Mi Nuevo Ser. </strong><br><br>
+                En Mi Nuevo Ser, nos especializamos en coaching ontológico, un enfoque innovador y 
+                transformador que te ayuda a comprender y mejorar la manera en que te relacionas 
+                contigo mismo y con el mundo que te rodea.<br><br>
+                Nuestro objetivo es acompañarte en un viaje de autodescubrimiento y cambio profundo.<br><br>
+
+                En Mi Nuevo Ser, estamos comprometidos a acompañarte en cada paso de este proceso transformador.
+                Nuestro enfoque único te permitirá descubrir un nuevo nivel de bienestar y éxito en todas
+                las áreas de tu vida.<br><br>
+                ¡Estamos aquí para apoyarte en la creación de tu nuevo ser!<br><br><br>
+            </p>
+        </div>
+    </div>
+    
+    
+    
+    <div class="presentacion-container" id="presentacion">
+        <img src="chica.jpg" class="chica" alt="chica">
+        <div class="contenido">
+            <h3 class="titulo">Carolina Melgarejo</h3>
+            <div class="texto">
+                <p>
+                    <strong>Mi nombre es Carolina.</strong><br>
+                    
+                    La necesidad de empezar a cambiar aspectos de mi vida que, 
+                    por no escucharme, no me gustaban, me llevaron a estudiar Coaching Ontológico.<br><br>
+                    Generar una escucha activa en este proceso me permitió y me permite estar donde quiero estar.
+                     Por eso, hoy quiero acompañar en este hermoso viaje de transformación a todas aquellas personas
+                      que tengan ganas de cambiar las áreas de sus vidas con las que no están conformes.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="contacto" id="contacto">
+        <form class="form" autocomplete="off" id="formulario">
+            <h2 class="form__title">Contactame</h2>
+            <div class="form__container">
+                <div class="form__group">
+                    <input type="text" id="name" name="name" class="form__input" placeholder="Nombre y Apellido" required>
+                    <span class="form__line"></span>
+                </div>
+                <div class="form__group">
+                    <input type="email" id="email" name="email" class="form__input" placeholder="Email" required>
+                    <span class="form__line"></span>
+                </div>
+                <div class="form__group">
+                    <input type="tel" id="tel" name="tel" class="form__input" placeholder="Teléfono (ingresar solo numeros y sin espacio)" required pattern="\d+">
+                    <span class="form__line"></span>
+                </div>
+                <div class="form__group">
+                    <input type="text" id="pais" name="pais" class="form__input" placeholder="Pais">
+                    <span class="form__line"></span>
+                </div>
+                </div>
+                <div class="g-recaptcha" data-sitekey="tu_site_key"></div>
+                <div class="loader" id="loader" style="display:none;"></div>
+                <div class="success-message" id="success-message" style="display:none;">
+                    <p>¡Formulario enviado correctamente!</p>
+                </div>
+                <input type="submit" class="form__submit" id="submit-btn" value="Enviar">
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+</html>
