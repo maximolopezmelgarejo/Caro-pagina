@@ -497,42 +497,32 @@ nav .links .email {
 }
 @media (max-width: 635px) {
     .contacto {
-        margin: 0 auto; /* Centra horizontalmente el contenedor */
-        width: 90%; /* Asegura que ocupe el 90% del ancho disponible */
-        padding: 0 5%; /* Ajusta el padding para mantener espacio en los lados */
-        box-sizing: border-box; /* Incluye padding y borde en el ancho total */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        width: 95%; /* Ajusta el ancho del contenedor para pantallas pequeñas */
+        margin: 5% auto; /* Centra el contenedor y añade espacio alrededor */
+        padding: 15px; /* Reduce el padding para evitar que se vea muy apretado */
     }
 
     .form {
-        width: 100%; /* Asegura que el formulario ocupe el 100% del contenedor */
-        margin-top: 5%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centra los elementos del formulario */
-        box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+        width: 85%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+        max-width: 100%; /* Elimina la limitación del ancho máximo */
+        padding: 2%; /* Reduce el padding para un mejor ajuste en pantallas pequeñas */
     }
 
     .form__input {
-        width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
-        background: #ffffff;
-        color: #333;
-        font-size: 16px;
-        padding: 15px;
-        margin-top: 7px;
-        border: 1px solid #B695C0;
-        border-radius: 8px;
-        outline: none;
-        box-sizing: border-box; /* Incluye padding y borde en el ancho total */
-        transition: border-color 0.3s, box-shadow 0.3s;
-    
+        width: 90%; /* Hace que los inputs ocupen todo el ancho disponible */
+        font-size: 14px; /* Reduce ligeramente el tamaño de fuente para que se ajuste mejor */
+        padding: 12px; /* Ajusta el padding para mantener un buen diseño */
+    }
+
+    .form__submit {
+        width: 100%; /* Asegura que el botón de envío ocupe todo el ancho disponible */
+        font-size: 16px; /* Ajusta el tamaño de fuente del botón */
+        padding: 12px; /* Reduce el padding para un mejor ajuste */
     }
 
     .form__captcha {
-        margin-bottom: 15px; /* Reduce el espacio debajo del captcha */
+        width: 100%; /* Asegura que el captcha ocupe todo el ancho disponible */
+        margin-bottom: 15px; /* Ajusta el espacio debajo del captcha */
     }
 }
 
@@ -603,3 +593,55 @@ nav .links .email {
     }
 }
 
+@media (min-width: 1125px) {
+    .contacto {
+        position: relative;
+        display: flex;
+        flex-direction: column; /* Cambiado a columna para que el formulario no se rompa en pantallas más pequeñas */
+        align-items: center;
+        justify-content: center; /* Centra el formulario en la página */
+        padding: 1%;
+        margin: 2% auto;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 30px;
+        text-align: center;
+        width: 35%; /* Aumentado para que se vea mejor en pantallas más pequeñas */
+        max-width: 800px; /* Limita el ancho máximo en pantallas grandes */
+        box-sizing: border-box;
+        height: auto; /* Permite que la altura se ajuste al contenido */
+    }
+    .form {
+        background-color: #ffffff;
+        margin: auto;
+        width: 80%; /* Aumentado a 100% para ocupar el ancho del contenedor padre */
+        align-items: center;
+        padding: 20px; /* Aumentado para dar más espacio interno */
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+
+
+    .form__input {
+        width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+        background: #ffffff;
+        color: #333;
+        font-size: 16px;
+        padding: 1%px;
+        margin-top: 0;
+        border: 1px solid #B695C0;
+        border-radius: 8px;
+        outline: none;
+        box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+        transition: border-color 0.3s, box-shadow 0.3s;
+    
+    }
+
+    .form__captcha {
+        margin-bottom: 15px; /* Reduce el espacio debajo del captcha */
+    }
+}
+
+
+    
