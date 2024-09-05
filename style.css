@@ -386,25 +386,37 @@ nav .links .email {
     border: 1px solid rgba(40, 167, 69, 0.3);
     display: inline-block;
 }
-
-footer{
-
-    background-color: black;
-    align-items: center;
-    
-
-
-
+/*-----------------------------------------------------------------------------------------------------------------------------*/
+.footer {
+    background-color: #030303;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid black;
 }
 
-
-footer .redes{
-    margin: 10%;
-    padding: auto;
-
-
-
+.footer__links {
+    margin-bottom: 15px;
 }
+
+.footer__links a {
+    color: #e0e0e0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer__links a:hover {
+    color: #B695C0; /* Color lila al hacer hover */
+}
+
+.footer__rights {
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
 
 /*-----------------------------------------------------------------------------------------------*/
 
