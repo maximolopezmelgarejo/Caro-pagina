@@ -56,6 +56,7 @@ nav .botones a {
     white-space: nowrap; /* Evita que el texto se ajuste en varias líneas */
 }
 
+
 nav .botones a:hover {
     background-color: #B695C0;
 }
@@ -95,8 +96,20 @@ nav .links .email {
     justify-content: center;
     align-items: center;
     margin-top: 90px;
+    animation: nuevo_animacion 1s ease-out forwards;
 }
 
+@keyframes nuevo_animacion {
+    0% {
+        opacity: 0;
+        transform: translate(10px, 20px);
+        
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* En su posición original */
+    }
+}
 #background-video {
     position: fixed;
     top: 0;
@@ -148,13 +161,16 @@ nav .links .email {
     align-items: center; /* Alinea verticalmente los elementos en el centro */
     justify-content: space-between; /* Espacia los elementos de manera uniforme */
     padding: 10px;
-    margin: 2% auto; /* Aplica margen superior e inferior, y centra el contenedor horizontalmente */
+    margin: 20% auto; /* Aplica margen superior e inferior, y centra el contenedor horizontalmente */
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 30px;
     text-align: left; /* Alinea el texto a la izquierda */
     width: 72%; /* Deja espacio alrededor ajustando el ancho del contenedor */
     box-sizing: border-box; /* Incluye el padding en el ancho total */
     height: 450px;
+    animation: nuevo_animacion 1s ease-out forwards;
+    
+    
 }
 .parent-container {
     display: flex;
@@ -213,6 +229,12 @@ nav .links .email {
     max-width: 800px; /* Limita el ancho máximo en pantallas grandes */
     box-sizing: border-box;
     height: auto; /* Permite que la altura se ajuste al contenido */
+    view-timeline-name: --formulario;
+    view-timeline-axis: block;
+    
+    animation-timeline: --formular ;
+    animation-name: show;
+
 }
 
 .contacto h2 {
@@ -231,6 +253,7 @@ nav .links .email {
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: formulario_animacion;
 }
 
 .form__title {
@@ -319,6 +342,24 @@ nav .links .email {
     margin: 20px auto;
 }
 
+@keyframes show {
+
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
+}
+.contacto.show {
+    animation: nuevo_animacion 0.5s ease-out forwards;
+}
+
+
+
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -326,7 +367,12 @@ nav .links .email {
     100% {
         transform: rotate(360deg);
     }
+    
+       
+    
 }
+
+  
 
 .success-message {
     background-color: rgba(40, 167, 69, 0.1);
@@ -339,6 +385,25 @@ nav .links .email {
     text-align: center;
     border: 1px solid rgba(40, 167, 69, 0.3);
     display: inline-block;
+}
+
+footer{
+
+    background-color: black;
+    align-items: center;
+    
+
+
+
+}
+
+
+footer .redes{
+    margin: 10%;
+    padding: auto;
+
+
+
 }
 
 /*-----------------------------------------------------------------------------------------------*/
@@ -562,7 +627,91 @@ nav .links .email {
         margin: 5px; /* Espacio entre botones */
     }
     
-    
+/* Estilos generales del nav */
+nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Logo en el nav */
+nav .logo {
+    height: 55px;
+    border-radius: 50%;
+}
+
+/* Contenedor de botones */
+nav .botones-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+/* Botones en el nav */
+nav .botones {
+    display: flex;
+}
+
+/* Botón de presentación centrado */
+nav .botones .presentacion-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #B695C0; /* Color de fondo del botón */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+/* Estilo del botón de presentación en hover */
+nav .botones .presentacion-btn:hover {
+    background-color: #a07d9e;
+}
+
+/* Links en el nav */
+nav .links {
+    display: flex;
+    align-items: center;
+}
+
+/* Enlaces dentro del nav */
+nav .links a {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+}
+
+/* Imágenes dentro del nav */
+nav .links img {
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+}
+
+/* Botón de email en el nav */
+nav .links .email {
+    background-color: #09f;
+    border-radius: 10px;
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
     
     
 

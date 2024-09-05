@@ -1,68 +1,85 @@
-document.getElementById('name').addEventListener('input', function() {
-    const nameInput = this;
+function validateName() {
+    const nameInput = document.getElementById('name');
     const nameValue = nameInput.value;
-
-    // Expresión regular para verificar si hay números en el nombre
     const containsNumber = /\d/;
-
     if (containsNumber.test(nameValue)) {
-        // Si contiene números, se pone el fondo rojo
         nameInput.style.backgroundColor = 'rgba(248, 215, 218, 1)';
+        return false;
     } else {
-        // Si no contiene números, se restaura el fondo
         nameInput.style.backgroundColor = 'rgba(212, 237, 218, 1)';
+        return true;
     }
-});
+}
 
-
-document.getElementById('tel').addEventListener('input', function() {
-    const telInput = this;
-    const telValue = telInput.value;
-
-    // Expresión regular que permite números, espacios, guiones y el símbolo +
-    const validPattern = /^[\d\s\-+]*$/;
-
-    if (!validPattern.test(telValue)) {
-        // Si el valor no coincide con el patrón permitido, se pone el fondo en rojo suave
-        telInput.style.backgroundColor = 'rgba(248, 215, 218, 1)';
-    } else {
-        // Si el valor es válido, se pone el fondo en verde claro
-        telInput.style.backgroundColor = 'rgba(212, 237, 218, 1)';
-    }
-});
-
-
-document.getElementById('email').addEventListener('input', function() {
-    const emailInput = this;
+function validateEmail() {
+    const emailInput = document.getElementById('email');
     const emailValue = emailInput.value;
-
-    // Expresión regular para validar un formato básico de email
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
     if (!emailPattern.test(emailValue)) {
-        // Si el email no es válido, se pone el fondo en rojo suave
         emailInput.style.backgroundColor = 'rgba(248, 215, 218, 1)';
+        return false;
     } else {
-        // Si el email es válido, se pone el fondo en verde claro
         emailInput.style.backgroundColor = 'rgba(212, 237, 218, 1)';
+        return true;
     }
-});
+}
 
-
-
-document.getElementById('pais').addEventListener('input', function() {
-    const nameInput = this;
-    const nameValue = nameInput.value;
-
-    // Expresión regular para verificar si hay números en el nombre
-    const containsNumber = /\d/;
-
-    if (containsNumber.test(nameValue)) {
-        // Si contiene números, se pone el fondo rojo
-        nameInput.style.backgroundColor = 'rgba(248, 215, 218, 1)';
+function validateTel() {
+    const telInput = document.getElementById('tel');
+    const telValue = telInput.value;
+    const validTelPattern = /^[\d\s\-+]*$/; // Acepta solo números, espacios, guiones y +
+    if (!validTelPattern.test(telValue)) {
+        telInput.style.backgroundColor = 'rgba(248, 215, 218, 1)';
+        return false;
     } else {
-        // Si no contiene números, se restaura el fondo
-        nameInput.style.backgroundColor = 'rgba(212, 237, 218, 1)';
+        telInput.style.backgroundColor = 'rgba(212, 237, 218, 1)';
+        return true;
+    }
+}
+
+function validatePais() {
+    const paisInput = document.getElementById('pais');
+    const paisValue = paisInput.value;
+    const containsNumber = /\d/;
+    if (containsNumber.test(paisValue)) {
+        paisInput.style.backgroundColor = 'rgba(248, 215, 218, 1)';
+        return false;
+    } else {
+        paisInput.style.backgroundColor = 'rgba(212, 237, 218, 1)';
+        return true;
+    }
+}
+
+document.getElementById('name').addEventListener('input', validateName);
+document.getElementById('email').addEventListener('input', validateEmail);
+document.getElementById('tel').addEventListener('input', validateTel);
+document.getElementById('pais').addEventListener('input', validatePais);
+
+document.getElementById('formulario').addEventListener('submit', function(event) {
+    const isNameValid = validateName();
+    const isEmailValid = validateEmail();
+    const isTelValid = validateTel();
+    const isPaisValid = validatePais();
+
+    // Si algún campo no es válido, previene el envío
+    if (!(isNameValid && isEmailValid && isTelValid && isPaisValid)) {
+        event.preventDefault();
+        alert('Por favor, revise los datos en el formulario.');
     }
 });
+//------------------------------------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", function() {
+    const formElement = document.querySelector('.contacto');
 
+    // Configuramos el IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                formElement.classList.add('show'); // Agrega la clase 'show' solo cuando el formulario esté en vista
+                observer.unobserve(formElement); // Deja de observar el formulario después de la primera vez
+            }
+        });
+    }, { threshold: 0.1 }); // El 20% del formulario debe estar visible para activar la animación
+
+    observer.observe(formElement); // Comenzamos a observar el formulario
+});
